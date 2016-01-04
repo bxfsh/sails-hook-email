@@ -10,7 +10,7 @@ The latest version of sails should load the hooks automatically just by npm inst
 npm i https://github.com/bxfsh/sails-hook-email.git
 ```
 
-In an older version of Sails, that does not support it you can create the directory /api/hooks and add a file called `email.js`, with the following content
+In an older version of Sails, that does not support it you can create the directory `/api/hooks` and add a file called `email.js`, with the following content
 
 ```js
 npm i https://github.com/bxfsh/sails-hook-email.git
@@ -23,7 +23,7 @@ module.exports = require('sails-hook-email');
 
 ## Configuration
 
-In your /config/globals.js add the following
+In your `/config/globals.js` add the following
 
 ```js
 emailSender: {
