@@ -28,7 +28,7 @@ sails.hooks.email.send(
     [receiverEmail1, receiverEmail2],
     'Your email title as String',
     null, // use this if you want to send raw text
-    messageAsHtmlk, // html message
+    messageAsHtml, // html message
     function(err) {
       if (err) {
         console.log(err);
@@ -39,13 +39,17 @@ sails.hooks.email.send(
 ```
 
 ### Promises
+
+You can also use promises instead of a callback
+
 ```js
 sails.hooks.email.send(
     senderEmail, 
     [receiverEmail1, receiverEmail2],
     'Your email title as String',
     null, // use this if you want to send raw text
-    messageAsHtmlk).then(function() {
+    messageAsHtml)
+    .then(function() {
         // all went well
     }, function(err) {
         // Jaysus, something went loopy
