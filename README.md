@@ -7,13 +7,13 @@ Sends Emails
 The latest version of sails should load the hooks automatically just by npm installing
 
 ```
-npm i https://github.com/bxfsh/sails-hook-email.git
+npm i https://github.com/bxfsh/sails-hook-email.git --save
 ```
 
 In an older version of Sails, that does not support it you can create the directory `/api/hooks` and add a file called `email.js`, with the following content
 
 ```js
-npm i https://github.com/bxfsh/sails-hook-email.git
+npm i https://github.com/bxfsh/sails-hook-email.git --save
 ```
 > You need to install the package regardless
 
