@@ -2,6 +2,20 @@
 
 Sends Emails
 
+## Instalation
+
+The latest version of sails should load the hooks automatically just by npm installing
+
+```
+npm i https://github.com/bxfsh/sails-hook-email.git
+```
+
+In an older version of Sails, that does not support it you can create the directoru /api/hooks and add a file called `email.js`, with the following content
+
+```js
+module.exports = require('sails-hook-email');
+```
+
 ## Usage
 
 ### Sending raw text
