@@ -1,0 +1,17 @@
+{
+  "name": "sails-hook-email",
+  "version": "0.0.0",
+  "description": "sends emails",
+  "main": "index.js",
+  "sails": {
+    "isHook": true
+  },
+  "dependencies": {
+    "nodemailer": "^1.10.0",
+    "nodemailer-smtp-transport": "^1.0.4",
+    "promised-io": "^0.3.5"
+  },
+  "devDependencies": {
+   "sails": "~0.11.0"
+  }
+}
