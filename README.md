@@ -16,6 +16,17 @@ In an older version of Sails, that does not support it you can create the direct
 module.exports = require('sails-hook-email');
 ```
 
+## Configuration
+
+In your /config/globals.js add the following
+
+```js
+emailSender: {
+    user: 'smtp user name',
+    password: 'smtp password'
+},
+```
+
 ## Usage
 
 ### Sending raw text
