@@ -1,5 +1,5 @@
 {
-  "name": "sails-hook-email",
+  "name": "@bxfsh/sails-hook-email",
   "version": "0.0.0",
   "description": "sends emails",
   "main": "index.js",
