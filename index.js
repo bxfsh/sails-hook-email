@@ -28,7 +28,7 @@ module.exports = function Email(sails) {
 			console.log(`[sails-hook-email] sending email to ${to}`);
 
 			if (sails.config.email)
-				console.log(`[sails-hook-email] credentials are ${sails.config.email}`);
+				console.log(`[sails-hook-email] credentials are ${sails.config.email.user}`);
 
 			var deferred = promise.defer();
 			var transporter = nodemailer.createTransport(smtpTransport({
