@@ -21,14 +21,14 @@ module.exports = function Email(sails) {
 		 * @param  {fucntion} callback function
 		 * @return void
 		 */
-		send: function send( to, subject, text, html, callback ) {
+		send: function send(from, to, subject, text, html, callback) {
 
 			'use strict';
 
 			console.log(`[sails-hook-email] sending email to ${to}`);
 
 			if (sails.config.email)
-				console.log(`[sails-hook-email] credentials are ${sails.config.email.user}`);
+				console.log(`[sails-hook-email] credentials are ${sails.config.email}`);
 
 			var deferred = promise.defer();
 			var transporter = nodemailer.createTransport(smtpTransport({
@@ -40,7 +40,7 @@ module.exports = function Email(sails) {
 		    }
 			}));
 			var mailOptions = {
-		    from: 'Boxfish Team<team@boxfish.com>',
+		    from: from || 'Boxfish Team<team@boxfish.com>',
 		    to: to.join(','),
 		    subject: subject
 			};
