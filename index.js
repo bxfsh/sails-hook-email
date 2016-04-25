@@ -64,7 +64,7 @@ module.exports = function Email(sails) {
 
 				// send HTML email
 
-				this._getHtml(html, function( html ) {
+				this._getHtml(html, function(html) {
 					mailOptions.html = html;
 
           // if silent we won't send the email, used in dev mode
