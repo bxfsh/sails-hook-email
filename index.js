@@ -25,10 +25,10 @@ module.exports = function Email(sails) {
 
 			'use strict';
 
-			console.log(`[sails-hook-email] sending email to ${to}`);
+			sails.log.debug(`    [sails-hook-email] sending email to ${to}`);
 
 			if (sails.config.email)
-				console.log(`[sails-hook-email] credentials are ${sails.config.email}`);
+				sails.log.debug(`     [sails-hook-email] credentials are ${sails.config.email}`);
 
 			var deferred = promise.defer();
 			var transporter = nodemailer.createTransport(smtpTransport({
@@ -66,15 +66,20 @@ module.exports = function Email(sails) {
 
 				this._getHtml(html, function( html ) {
 					mailOptions.html = html;
-					transporter.sendMail(mailOptions, onAfterSend);
+
+          // if silent we won't send the email, used in dev mode
+          if (sails.config.email.silent) onAfterSend();
+					else transporter.sendMail(mailOptions, onAfterSend);
 				});
 
 			} else {
 
 				// send regular email
-
 				mailOptions.text = text;
-				transporter.sendMail(mailOptions, onAfterSend);
+
+        // if silent we won't send the email, used in dev mode
+        if (sails.config.email.silent) onAfterSend();
+        else transporter.sendMail(mailOptions, onAfterSend);
 			}
 
 			return deferred;
