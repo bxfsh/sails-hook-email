@@ -82,6 +82,6 @@ sails.hooks.email.send(
     .then(function() {
         // all went well
     }, function(err) {
-        // Jaysus, something went loopy
+        // Handle Error
     });
 ```
